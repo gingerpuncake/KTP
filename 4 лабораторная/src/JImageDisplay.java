@@ -1,37 +1,33 @@
-import javax.swing.JComponent;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
+import javax.swing.*;
+import java.awt.image.*;
+import java.awt.*;
 
-// наследования от класса JComponent
-public class JImageDisplay extends JComponent {
-
-    private BufferedImage bufferedImage;
-
-    // конструктор
+class JImageDisplay extends JComponent
+{
+    private BufferedImage displayImage;
+    public BufferedImage getImage() {
+        return displayImage;
+    }
     public JImageDisplay(int width, int height) {
-        // инициализация нового изображения
-        this.bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-        // вызываем метод, благодаря которому компанент
-        // будет включен в пользовательский интерфейс
-        super.setPreferredSize(new Dimension(width, height));
+        displayImage = new BufferedImage(width, height,
+        BufferedImage.TYPE_INT_RGB);
+        Dimension imageDimension = new Dimension(width, height);
+        super.setPreferredSize(imageDimension);
+        
     }
-
-    protected void paintComponent(Graphics g) {
-        // вызываем метод суперкласса
+    public void paintComponent(Graphics g)
+    {
         super.paintComponent(g);
-        // рисуем изображение в компоненте
-        g.drawImage(bufferedImage, 0, 0, bufferedImage.getWidth(), bufferedImage.getHeight(), null);
+        g.drawImage(displayImage, 0, 0, displayImage.getWidth(),
+        displayImage.getHeight(), null);
     }
-
-    // метод, устанавливающий все пиксели в черный цвет
-    public void clearImage() {
-        int imageArea = bufferedImage.getWidth()*bufferedImage.getHeight();
-        bufferedImage.setRGB(0, 0, bufferedImage.getWidth(), bufferedImage.getHeight(), new int[imageArea], 0, 0);
+    public void clearImage()
+    {
+        int[] blankArray = new int[getWidth() * getHeight()];
+        displayImage.setRGB(0, 0, getWidth(), getHeight(), blankArray, 0, 1);
     }
-
-    // метод, устанавливающий пиксели в определенный цвет
-    public void drawPixel(int x, int y, int rgbColor) {
-        bufferedImage.setRGB(x, y, rgbColor);
+    public void drawPixel(int x, int y, int rgbColor)
+    {
+        displayImage.setRGB(x, y, rgbColor);
     }
 }
