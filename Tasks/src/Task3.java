@@ -83,25 +83,14 @@ public class Task3 {
     // Создайте функцию, которая определяет, является ли строка допустимым
     // шестнадцатеричным кодом
 
-    public static boolean isValidHexCode(String str){
-        boolean check = false;
-        if(str.startsWith("#")){
-            str = str.substring(1);
-        for (int i=0; i<str.length();  i++){
-            check = str.charAt(i) <= 9 && str.toLowerCase().charAt(i) >= 'A' && str.toLowerCase().charAt(i) <= 'F';
-            }
-        }
-        return check;
-    }
-/*
-    public static boolean isValidHexCode(String code){
+    public static boolean isValidHexCode(String code) {
 
         if (code.length() > 7) return false;
 
         else if (code.matches("#[a-fA-F0-9]+")) return true;
 
         else return false;
- */
+    }
     //6
     // Напишите функцию, которая возвращает true, если два массива имеют одинаковое
     // количество уникальных элементов, и false в противном случае.
