@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfebf9d1-b6cb-49f6-aa34-8cdb2ed8971f" name="Default Changelist" comment="" />
+    <list default="true" id="bfebf9d1-b6cb-49f6-aa34-8cdb2ed8971f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../4 лабораторная/4 лабораторная.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4 лабораторная/out/production/4 лабораторная/FractalExplorer$ButtonHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../4 лабораторная/out/production/4 лабораторная/FractalExplorer$ButtonHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4 лабораторная/out/production/4 лабораторная/FractalExplorer$MouseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../4 лабораторная/out/production/4 лабораторная/FractalExplorer$MouseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4 лабораторная/out/production/4 лабораторная/FractalExplorer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../4 лабораторная/out/production/4 лабораторная/FractalExplorer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4 лабораторная/src/BurningShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/../4 лабораторная/src/BurningShip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4 лабораторная/src/FractalExplorer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../4 лабораторная/src/FractalExplorer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4 лабораторная/src/FractalGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../4 лабораторная/src/FractalGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4 лабораторная/src/JImageDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/../4 лабораторная/src/JImageDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4 лабораторная/src/Mandelbrot.java" beforeDir="false" afterPath="$PROJECT_DIR$/../4 лабораторная/src/Mandelbrot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4 лабораторная/src/Tricorn.java" beforeDir="false" afterPath="$PROJECT_DIR$/../4 лабораторная/src/Tricorn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task4.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,10 +31,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1atGwLEmGKlQhqDhKoTxu13g3Ch" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -28,6 +46,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Application.Task4">
@@ -70,6 +89,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1587588938619" />
+    <state x="803" y="7" key="CommitChangelistDialog2" timestamp="1587985238024">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="803" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587985238024" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1587643114992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
