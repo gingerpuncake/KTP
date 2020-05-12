@@ -62,24 +62,13 @@ public class Task4 {
         for (int i = 1; i < str.length(); i++) {
             if (str.charAt(i) == '_')
                 str = str.substring(0, i) + str.substring(i + 1, i + 2).toUpperCase() + str.substring(i + 2, str.length());
-
         }
-
         return str;
     }
 
 
     public static String toSnakeCase(String str) {
         return str.replaceAll("([A-Z])", "_$0").toLowerCase();
-    }
-
-    public static String overTime(double[] work) {
-        double sum = 0;
-        if (17 - work[0] >= 0)
-            sum += (17 - work[0]) * work[2];
-        if (work[1] - 17 >= 0)
-            sum += (work[1] - 17) * work[2] * work[3];
-        return ('$' + String.valueOf(sum));
     }
 
     //4. Напишите функцию, которая вычисляет сверхурочную работу и оплату,
@@ -92,6 +81,14 @@ public class Task4 {
     //Ваша функция должна возвращать: $ + заработанные в тот день
     // (округлены до ближайшей сотой)
 
+    public static String overTime(double[] work) {
+        double sum = 0;
+        if (17 - work[0] >= 0)
+            sum += (17 - work[0]) * work[2];
+        if (work[1] - 17 >= 0)
+            sum += (work[1] - 17) * work[2] * work[3];
+        return ('$' + String.valueOf(sum));
+    }
 
     // 5. Индекс массы тела (ИМТ) определяется путем измерения вашего веса
     // в килограммах и деления на квадрат вашего роста в метрах.
