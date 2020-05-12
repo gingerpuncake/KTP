@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfebf9d1-b6cb-49f6-aa34-8cdb2ed8971f" name="Default Changelist" comment="task5">
-      <change afterPath="$PROJECT_DIR$/src/Task5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ФП/lab1/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ФП/lab1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ФП/lab1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ФП/lab1/src/main/scala/Classes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../ФП/lab1/src/main/scala/Classes.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ФП/lab1/src/main/scala/Functions.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../ФП/lab1/src/main/scala/Functions.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ФП/lab1/src/main/scala/HiOrder.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../ФП/lab1/src/main/scala/HiOrder.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ФП/lab1/src/main/scala/Patterns.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../ФП/lab1/src/main/scala/Patterns.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,10 +103,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="803" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589121843180" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1588871945621">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1589294770598">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588871945621" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589294770598" />
     <state width="726" height="248" key="GridCell.Tab.0.bottom" timestamp="1589293275123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -147,14 +139,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="726" height="258" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588363194173" />
-    <state x="955" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589121803788">
+    <state x="955" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589302459886">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="955" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1589121803788" />
-    <state x="418" y="34" key="new project wizard" timestamp="1588871948615">
+    <state x="955" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1589302459886" />
+    <state x="418" y="34" key="new project wizard" timestamp="1589294781820">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="418" y="34" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1588871948615" />
+    <state x="418" y="34" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1589294781820" />
     <state x="801" y="189" key="run.anything.popup" timestamp="1589290041812">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
