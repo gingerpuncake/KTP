@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfebf9d1-b6cb-49f6-aa34-8cdb2ed8971f" name="Default Changelist" comment="task5">
+    <list default="true" id="bfebf9d1-b6cb-49f6-aa34-8cdb2ed8971f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +27,9 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1atGwLEmGKlQhqDhKoTxu13g3Ch" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -36,9 +38,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last.edited.regexp" value="Sample Text" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Application.Task5">
+  <component name="RunManager" selected="Application.Task6">
     <configuration name="Task3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Task3" />
       <module name="Tasks" />
@@ -60,8 +63,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Task6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Task6" />
+      <module name="Tasks" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Task6" />
         <item itemvalue="Application.Task5" />
         <item itemvalue="Application.Task4" />
         <item itemvalue="Application.Task3" />
@@ -79,6 +90,14 @@
       <option name="presentableId" value="Default" />
       <updated>1587547713163</updated>
     </task>
+    <task id="LOCAL-00001" summary="task5">
+      <created>1589302491218</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589302491218</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -91,38 +110,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="618" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1587588938619" />
-    <state x="856" y="131" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1589287363747">
+    <state x="856" y="131" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1589303963205">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="856" y="131" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1536.824@0.0.1536.824" timestamp="1589287363747" />
-    <state x="863" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1588509825453">
+    <state x="856" y="131" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1536.824@0.0.1536.824" timestamp="1589303963205" />
+    <state x="863" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1589822594692">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="863" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1588509825453" />
-    <state x="803" y="7" key="CommitChangelistDialog2" timestamp="1589121843180">
+    <state x="863" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1589822594692" />
+    <state x="803" y="7" key="CommitChangelistDialog2" timestamp="1589302484625">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="803" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589121843180" />
+    <state x="803" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589302484625" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1589294770598">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589294770598" />
-    <state width="726" height="248" key="GridCell.Tab.0.bottom" timestamp="1589293275123">
+    <state width="726" height="251" key="GridCell.Tab.0.bottom" timestamp="1589823388111">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="726" height="248" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589293275123" />
-    <state width="726" height="248" key="GridCell.Tab.0.center" timestamp="1589293275123">
+    <state width="726" height="251" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589823388111" />
+    <state width="726" height="251" key="GridCell.Tab.0.center" timestamp="1589823388110">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="726" height="248" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589293275123" />
-    <state width="726" height="248" key="GridCell.Tab.0.left" timestamp="1589293275123">
+    <state width="726" height="251" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589823388110" />
+    <state width="726" height="251" key="GridCell.Tab.0.left" timestamp="1589823388110">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="726" height="248" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589293275123" />
-    <state width="726" height="248" key="GridCell.Tab.0.right" timestamp="1589293275123">
+    <state width="726" height="251" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589823388110" />
+    <state width="726" height="251" key="GridCell.Tab.0.right" timestamp="1589823388110">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="726" height="248" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589293275123" />
+    <state width="726" height="251" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589823388110" />
     <state width="726" height="258" key="GridCell.Tab.1.bottom" timestamp="1588363194173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -147,10 +166,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="418" y="34" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1589294781820" />
-    <state x="801" y="189" key="run.anything.popup" timestamp="1589290041812">
+    <state x="855" y="41" key="refactoring.ChangeSignatureDialog" timestamp="1589821809586">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="801" y="189" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589290041812" />
+    <state x="855" y="41" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1589821809586" />
+    <state x="801" y="189" key="run.anything.popup" timestamp="1589311988251">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="801" y="189" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589311988251" />
     <state x="788" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1587670234941">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
