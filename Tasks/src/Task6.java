@@ -118,22 +118,28 @@ public class Task6 {
     найдите слово, которое встречается первым.*/
 
     public static String getHashTags(String str){
-        String[] hashtags = new String[]{" "," "," "};
-        String [] strMass = str.split(" ");
+        String[] hashtags = new String[]{" ", " ", " "};
         String buf = "";
-        for (int i = 0; i<strMass.length;i++){
-            if (strMass[i].length()>hashtags[0].length())
-                hashtags[0]= strMass[i];
-            else if (strMass[i].length()>hashtags[1].length())
-                hashtags[1] = strMass[i];
-            else if (strMass[i].length()>hashtags[2].length())
-                hashtags[2] = strMass[i];
+        for (int i = 0 ; i<str.length();i++){
+            if (str.charAt(i) != ' ')
+                buf+=str.charAt(i);
+            else if (buf.length() > hashtags[0].length()) {
+                hashtags[0] = buf;
+                buf = "";
+            }
+            else if (buf.length() > hashtags[1].length()) {
+                hashtags[1] = buf;
+                buf = "";
+            }
+            else if (buf.length() > hashtags[2].length()) {
+                hashtags[2] = buf;
+                buf = "";
+            }
+            else
+                buf = "";
         }
         for (int i = 0; i < hashtags.length; i++){
-            if (hashtags[i]==" ")
-                hashtags[i] = " ";
-            else
-                hashtags[i] = "#" + hashtags[i].toLowerCase();
+            hashtags[i] = "#" + hashtags[i].toLowerCase();
         }
         return Arrays.toString(hashtags);
     }

@@ -3,79 +3,63 @@ import java.net.*;
 import java.util.*;
 import java.util.regex.*;
 public class Crawler {
-
     public static void main(String[] args) throws IOException {
 
-        String[] arg = new String[] {"https://htmlbook.ru//","1"};
-        // глубина
+        String[] arg = new String[] {"http://google.ru//","1","1"};
+        // переменные для текущей глубины и запрошенного количества потоков
         int depth = 0;
-        // проверяем, сколько параментров введено
-        if (arg.length != 2) {
-            // если не 2, выводится ошибка, работа программы останавливается
-            System.out.println("usage: java Crawler <URL> <depth>");
+        int numThreads = 0;
+        // проверяем, правильное ли количество параметров было введено
+        try {
+            depth = Integer.parseInt(arg[1]);
+            numThreads = Integer.parseInt(arg[2]);
+        }
+        catch (NumberFormatException nfe) {
+            // проверяем являются ли глубина и количество потоков цифрами
+            System.out.println("usage: java Crawler <URL> <depth> "
+                    + "<number of crawler threads>");
             System.exit(1);
         }
-        // если все введено верно, то
-        else {
-            try {
-                // устанавливаем глубину
-                depth = Integer.parseInt(arg[1]);
-            }
-            // проверяем является ли глубина цифрой
-            catch (NumberFormatException nfe) {
-                System.out.println("usage: java Crawler <URL> <depth>");
-                System.exit(1);
-            }
-        }
-        // список для представления ожидающих URL-адресов
-        LinkedList<URLDepthPair> pendingURLs = new LinkedList<URLDepthPair>();
-        //  связный список для представления обработанных URL
-        LinkedList<URLDepthPair> processedURLs = new LinkedList<URLDepthPair>();
-        // глубина URL-пары для представления веб-сайта
+        // создаем глубина URL-пары для представления веб-сайта
         URLDepthPair currentDepthPair = new URLDepthPair(arg[0], 0);
-        // добавляем введенный веб-сайт в ожидающие URL-адреса
-        pendingURLs.add(currentDepthPair);
-        // добавляем текущий веб-сайт
-        ArrayList<String> seenURLs = new ArrayList<String>();
-        seenURLs.add(currentDepthPair.getURL());
-
-        // пока URL-адреса не станут пустыми, получаем все ссылки от каждого посещенного сайта
-        while (pendingURLs.size() != 0) {
-            // добавляем URL в список обработанных и сохранем глубину
-            URLDepthPair depthPair = pendingURLs.pop();
-            processedURLs.add(depthPair);
-            int myDepth = depthPair.getDepth();
-            // получаем все ссылки с сайта и сохраняем их в новом связном списке
-            LinkedList<String> linksList;
-            linksList = Crawler.getAllLinks(depthPair);
-            // добавляем ссылки, которые раньше не были видны, если мы не достигли максимальной глубины
-            if (myDepth < depth) {
-                // перебирать ссылки с сайта
-                for (String newURL : linksList) {
-                    // продолжаем, если мы уже видели ссылку
-                    if (seenURLs.contains(newURL)) {
-                        continue;
-                    }
-                    // cоздаем новую пару URL-глубина, если ссылка не встречалась ранее, и добвляем в списки
-                    else {
-                        URLDepthPair newDepthPair = new URLDepthPair(newURL, myDepth + 1);
-                        pendingURLs.add(newDepthPair);
-                        seenURLs.add(newURL);
-                    }
+        // создаем URL пул и добавляем введенный пользователем веб-сайт
+        URLPool pool = new URLPool(depth);
+        pool.put(currentDepthPair);
+        // поле для начального количества потоков
+        int initialActiveThreads = Thread.activeCount();
+        /* пока количество ожидающих потоки не равно их запрошенному числу и
+        если количество всех потоков меньше их запрошенного количества, то
+        создаём больше потоков и запускаем их на CrawlerTask. Иначе ждём. */
+        while (pool.getWaitThreads() != numThreads) {
+            if (Thread.activeCount() - initialActiveThreads < numThreads) {
+                CrawlerTask crawler = new CrawlerTask(pool);
+                new Thread(crawler).start();
+            }
+            else {
+                try {
+                    Thread.sleep(500); // 0,5 секунды
+                }
+                // ловим исключение для прерывания потока
+                catch (InterruptedException ie) {
+                    System.out.println("Caught unexpected InterruptedException,"
+                            + " ignoring...");
                 }
             }
         }
-        // выводим все обработанные URL с глубиной
-        for (URLDepthPair processedURL : processedURLs) {
-            System.out.println(processedURL);
+        // пока все потоки находятся в ожидании, печатаем обработанные URL
+        Iterator<URLDepthPair> iter = pool.processedURLs.iterator();
+        while (iter.hasNext()) {
+            System.out.println(iter.next());
         }
+        // выход
+        System.exit(0);
     }
-    private static LinkedList<String> getAllLinks(URLDepthPair myDepthPair) throws IOException {
+    public static LinkedList<String> getAllLinks(URLDepthPair myDepthPair) throws IOException {
         // создаем связанный список LinkedList<String>, в котором будут храниться ссылки, что мы находим
         LinkedList<String> URLs = new LinkedList<String>();
-        // Новый сокет
+        // Создаём новый сокет
         Socket sock;
-        // Новый сокет содержащей имя хоста, и из номера порта, равного 80 (http)
+        // Создаем новый сокет из строки String, содержащей имя хоста, и из номера порта, равного 80 (http)
         try {
             sock = new Socket(myDepthPair.getWebHost(), 80);
         }
@@ -86,6 +70,7 @@ public class Crawler {
         }
         // ловим исключения ввода-вывода и возвращаем пустой список
         catch (IOException ex) {
+            //System.err.println("IOException: " + ex.getMessage());
             return URLs;
         }
         try {
@@ -148,6 +133,14 @@ public class Crawler {
         }
         // ловим исключения ввода-вывода и возвращаем пустой список
         catch (IOException except) {
+            //System.err.println("IOException: " + except.getMessage());
+            return URLs;
+        }
+        // Если сервер вернул пустой ответ, то заканчиваем обработку
+        if (lineCode == null) {
+            System.out.println("Ошибка: сайт \"" + myDepthPair.getURL() +
+                    "\" вернул пустой ответ");
+            // возвращаем пустой список ссылок
             return URLs;
         }
         // создаем паттерн для кодов html: 2xx, 3xx, 4xx
@@ -166,9 +159,9 @@ public class Crawler {
                 }
                 // ловим исключения ввода-вывода и возвращаем пустой список
                 catch (IOException except) {
+                    //System.err.println("IOException: " + except.getMessage());
                     return URLs;
                 }
-
                 // прекращаем чтения документа
                 if (line == null) {
                     break;
@@ -176,7 +169,12 @@ public class Crawler {
                 // создаем паттерн для поиска URL
                 Pattern patternURL = Pattern.compile(
                         "[\"]"// перед ссылкой должно быть кавычка
-                                + "[https?://]{7,8}" + "([w]{3})?" + "[\\w\\.\\-]+" + "\\." + "[A-Za-z]{2,6}" + "[\\w\\.-/]*"
+                                + "[https?://]{7,8}"// может быть http://, а может быть https://
+                                + "([w]{3})?" // www может быть, а может не быть
+                                + "[\\w\\.\\-]+" // хост сайта без домена 1-ого уровня
+                                + "\\." // точка перед доменом 1-ого уровня
+                                + "[A-Za-z]{2,6}" // домен 1-ого уровня
+                                + "[\\w\\.-/]*" // путь к странице
                                 + "[\"]"); // после ссылки должно быть кавычка
                 Matcher matcherURL = patternURL.matcher(line);
                 // поиск URL в строке с помощью паттерна
@@ -202,13 +200,14 @@ public class Crawler {
                 }
                 // ловим исключения ввода-вывода и возвращаем пустой список
                 catch (IOException except) {
+                    //System.err.println("IOException: " + except.getMessage());
                     return URLs;
                 }
                 // прекращаем чтения документа
                 if (tempLine == null) {
                     break;
                 }
-
+                // паттерн для поиска URL для перенаправления
                 Pattern patternNewURL = Pattern.compile("(Location: ){1}[\\S]+");
                 Matcher matcherNewURL = patternNewURL.matcher(tempLine);
                 while (matcherNewURL.find()) {
@@ -217,6 +216,8 @@ public class Crawler {
                 }
             }
             if (newURL.equals(myDepthPair.getURL())) {
+                /* System.out.println("Ошибка: сайт \"" + myDepthPair.getURL() +
+                "\" перенаправляет на самого себя" + " (код ответа HTML 3xx)"); */
                 sock.close();
                 // возвращаем пустой список ссылок
                 return URLs;
@@ -226,6 +227,13 @@ public class Crawler {
             // вызываем метод getAllLinks с исправленным URL
             return getAllLinks(newDepthPair);
         }
-        return URLs;
+        // обработка для кодов html, равных 4xx
+        else {
+            System.out.println("Ошибка: сайт \"" + myDepthPair.getURL() +
+                    "\" недоступен (код ответа HTML 4xx)");
+            sock.close();
+            // возвращаем пустой список ссылок
+            return URLs;
+        }
     }
 }

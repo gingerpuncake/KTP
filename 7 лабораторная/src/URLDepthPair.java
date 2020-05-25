@@ -1,27 +1,23 @@
 import java.net.*;
 public class URLDepthPair {
-
+    // URL
     private final String currentURL;
+    // глубина
     private final int currentDepth;
-
-    // конструктор
+    // конструктор, который устанавливает ввод для текущих URL и глубины
     public URLDepthPair(String URL, int depth) {
-        // текущий URL
         currentURL = URL;
-        // глубина
         currentDepth = depth;
     }
-
-    // метод, который возвращает текущий URL
+    // текущий URL
     public String getURL() {
         return currentURL;
     }
-    // метод, который возвращает текущую глубину
+    // текущая глубину
     public int getDepth() {
         return currentDepth;
     }
-
-    // текущий URL и глубина, но в виде строки
+    // тоже самое , но в виде строки
     public String toString() {
         String stringDepth = Integer.toString(currentDepth);
         return stringDepth + '\t' + currentURL;
@@ -34,10 +30,10 @@ public class URLDepthPair {
             return url.getPath();
         }
         catch (MalformedURLException e) {
+            //System.err.println("MalformedURLException: " + e.getMessage());
             return null;
         }
     }
-
     // метод, который возращает хост текущего URL
     public String getWebHost() {
         try {
@@ -45,6 +41,7 @@ public class URLDepthPair {
             return url.getHost();
         }
         catch (MalformedURLException e) {
+            //System.err.println("MalformedURLException: " + e.getMessage());
             return null;
         }
     }
